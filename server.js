@@ -6,11 +6,11 @@ const express = require('express');
 const app = express();
 
 // Sirvo todos os arquivos estáticos que estão na pasta onde foi criado os arquivos de build (dist)
-app.use(express.static(__dirname + '/dist/algamoney-ui'));
+app.use(express.static(__dirname + '/dist'));
 
 // Direciona a chamada para a página principal da aplicação
 app.get('/*', function(req, res) {
-  res.sendFile(__dirname + '/dist/algamoney-ui/index.html');
+  res.sendFile(__dirname + '/dist/index.html');
 });
 
 // Fica escutando a porta onde se encontra está a aplicação
