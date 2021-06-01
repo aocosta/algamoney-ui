@@ -5,7 +5,7 @@ const express = require('express');
 // Cria um objeto que representa um servidor web
 const app = express();
 
-// Sirvo todos os arquivos estáticos que estão na pasta onde foi criado os arquivos de build
+// Sirvo todos os arquivos estáticos que estão na pasta onde foi criado os arquivos de build (dist)
 app.use(express.static(__dirname + '/dist/algamoney-ui'));
 
 // Direciona a chamada para a página principal da aplicação
