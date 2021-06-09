@@ -36,11 +36,20 @@ export function tokenGetter(): string {
       }
     }),
     */
+    /*
     JwtModule.forRoot({
       config: {
         tokenGetter,
         allowedDomains: ['localhost:8080'],
         disallowedRoutes: ['http://localhost:8080/oauth/token']
+      }
+    }),
+    */
+    JwtModule.forRoot({
+      config: {
+        tokenGetter,
+        allowedDomains: ['https://aocosta-algamoney-api.herokuapp.com'],
+        disallowedRoutes: ['https://aocosta-algamoney-api.herokuapp.com/oauth/token']
       }
     }),
 
