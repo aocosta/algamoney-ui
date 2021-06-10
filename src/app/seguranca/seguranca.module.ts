@@ -14,6 +14,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { SegurancaRoutingModule } from './seguranca-routing.module';
 import { MoneyHttpInterceptor } from './money-http-interceptor';
 
+import { environment } from './../../environments/environment';
+
 export function tokenGetter(): string {
   return localStorage.getItem('token');
 }
@@ -45,11 +47,20 @@ export function tokenGetter(): string {
       }
     }),
     */
+    /*
     JwtModule.forRoot({
       config: {
         tokenGetter,
         allowedDomains: ['https://aocosta-algamoney-api.herokuapp.com'],
         disallowedRoutes: ['https://aocosta-algamoney-api.herokuapp.com/oauth/token']
+      }
+    }),
+    */
+    JwtModule.forRoot({
+      config: {
+        tokenGetter,
+        allowedDomains: environment.tokenAllowedDomains,
+        disallowedRoutes: environment.tokenDisallowedRoutes
       }
     }),
 
